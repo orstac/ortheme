@@ -1,0 +1,23 @@
+{
+  "name": "ortheme",
+  "version": "1.0.0",
+  "description": "a bootstrap theme",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/orstac/ortheme.git"
+  },
+  "author": "OrsTac",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/orstac/ortheme/issues"
+  },
+  "homepage": "https://github.com/orstac/ortheme#readme",
+  "dependencies": {
+    "bootstrap": "^4.3.1",
+    "mocha": "^6.1.4"
+  }
+}
