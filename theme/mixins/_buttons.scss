@@ -7,6 +7,7 @@
   color: color-yiq($background);
   @include gradient-bg($background);
   border-color: $border;
+  box-shadow: 0px 0px 20px 0px rgba($border, 0.5);
   @include box-shadow($btn-box-shadow);
 
   @include hover {
@@ -17,10 +18,13 @@
 
   &:focus,
   &.focus {
+
     // Avoid using mixin so we can pass custom focus shadow properly
     @if $enable-shadows {
       box-shadow: $btn-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
-    } @else {
+    }
+
+    @else {
       box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
     }
   }
@@ -31,6 +35,7 @@
     color: color-yiq($background);
     background-color: $background;
     border-color: $border;
+
     // Remove CSS gradients if they're enabled
     @if $enable-gradients {
       background-image: none;
@@ -39,19 +44,24 @@
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
-  .show > &.dropdown-toggle {
+  .show>&.dropdown-toggle {
     color: color-yiq($active-background);
     background-color: $active-background;
+
     @if $enable-gradients {
       background-image: none; // Remove the gradient for the pressed/active state
     }
+
     border-color: $active-border;
 
     &:focus {
+
       // Avoid using mixin so we can pass custom focus shadow properly
-      @if $enable-shadows and $btn-active-box-shadow != none {
+      @if $enable-shadows and $btn-active-box-shadow !=none {
         box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
-      } @else {
+      }
+
+      @else {
         box-shadow: 0 0 0 $btn-focus-width rgba(mix(color-yiq($background), $border, 15%), .5);
       }
     }
@@ -61,6 +71,7 @@
 @mixin button-outline-variant($color, $color-hover: color-yiq($color), $active-background: $color, $active-border: $color) {
   color: $color;
   border-color: $color;
+  box-shadow: 0px 0px 20px 0px rgba($color, 0.25);
 
   @include hover {
     color: $color-hover;
@@ -81,16 +92,19 @@
 
   &:not(:disabled):not(.disabled):active,
   &:not(:disabled):not(.disabled).active,
-  .show > &.dropdown-toggle {
+  .show>&.dropdown-toggle {
     color: color-yiq($active-background);
     background-color: $active-background;
     border-color: $active-border;
 
     &:focus {
+
       // Avoid using mixin so we can pass custom focus shadow properly
-      @if $enable-shadows and $btn-active-box-shadow != none {
+      @if $enable-shadows and $btn-active-box-shadow !=none {
         box-shadow: $btn-active-box-shadow, 0 0 0 $btn-focus-width rgba($color, .5);
-      } @else {
+      }
+
+      @else {
         box-shadow: 0 0 0 $btn-focus-width rgba($color, .5);
       }
     }
