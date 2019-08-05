@@ -61,7 +61,7 @@ $colors: map-merge(
     "cyan":       $cyan,
     "white":      $white,
     "gray":       $gray-600,
-    "gray-dark":  $gray-800
+    "gray-dark":  $gray-900
   ),
   $colors
 );
@@ -74,6 +74,7 @@ $warning:       $yellow   !default;
 $danger:        $red      !default;
 $light:         $gray-100 !default;
 $dark:          $gray-800 !default;
+$discord:       #7289DA !default;
 
 $theme-colors: () !default;
 // stylelint-disable-next-line scss/dollar-variable-default
@@ -86,7 +87,10 @@ $theme-colors: map-merge(
     "warning":    $warning,
     "danger":     $danger,
     "light":      $light,
-    "dark":       $dark
+    "dark":       $dark,
+    "gray":       $gray-600,
+    "gray-dark":  $gray-900,
+    "discord":    $discord
   ),
   $theme-colors
 );
